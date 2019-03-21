@@ -43,8 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\Admin.cs" />
+    <Compile Include="Chat\IChat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Client\IUser.cs" />
+    <Compile Include="Client\SimpleUser.cs" />
+    <Compile Include="Chat\TextChat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
