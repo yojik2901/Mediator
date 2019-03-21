@@ -4,21 +4,13 @@ namespace Mediator
 {
     public class SimpleUser : IUser
     {
-        private IChat _chat;
+        public SimpleUser(IChat chat, string name)
+            : base(chat, name)
+        { }
 
-        public SimpleUser(IChat chat)
+        public override void getMessage(string message)
         {
-            _chat = chat;
-        }
-
-        public void getMessage(string message)
-        {
-            Console.WriteLine("Пользователь получает сообщение '" + message + "'");
-        }
-
-        public void sendMessage(string message)
-        {
-            _chat.sendMessage(message, this);
+            Console.WriteLine("Пользователь "+ getName() + " получает сообщение '" + message + "'");
         }
     }
 }

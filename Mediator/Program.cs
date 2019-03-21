@@ -12,13 +12,16 @@ namespace Mediator
         {
             TextChat chat = new TextChat();
             
-            IUser admin = new Admin(chat);
-            IUser user1 = new SimpleUser(chat);
-            IUser user2 = new SimpleUser(chat);
+            IUser admin = new Admin(chat, "Иван Иваныч");
+            IUser user1 = new SimpleUser(chat,"Sergey");
+            IUser user2 = new SimpleUser(chat, "Dasha");
+            IUser user3 = new SimpleUser(chat, "Masha");
+            user2.setEnable(false);
 
             chat.setAdmin(admin);
             chat.addUser(user1);
             chat.addUser(user2);
+            chat.addUser(user3);
 
             user1.sendMessage("Hello, I'm user");
             admin.sendMessage("Admin online!!!");

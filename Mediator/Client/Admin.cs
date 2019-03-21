@@ -4,21 +4,13 @@ namespace Mediator
 {
     public class Admin : IUser
     {
-        private IChat _chat;
+        public Admin(IChat chat, string name)
+            : base(chat, name)
+        {}
 
-        public Admin(IChat chat)
+        public override void getMessage(string message)
         {
-            _chat = chat;
-        }
-
-        public void getMessage(string message)
-        {
-            Console.WriteLine("Администратор получает сообщение '" + message + "'");
-        }
-
-        public void sendMessage(string message)
-        {
-            _chat.sendMessage(message, this);
+            Console.WriteLine("Администратор " + getName() + " получает сообщение '" + message + "'");
         }
     }
 }
